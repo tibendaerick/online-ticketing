@@ -1,0 +1,41 @@
+:root{color-scheme:dark;--sheet:rgba(17,24,39,.96);--field:rgba(0,0,0,.3);--navbg:rgba(17,24,39,.8);--brandbg:rgba(11,18,32,.92);--glow:rgba(249,115,22,.35)}
+html{background:var(--bg);scroll-behavior:smooth}
+html[data-theme=light]{color-scheme:light;--bg:#F3F4F6;--tx:#111827;--mu:#4B5563;--gl:rgba(255,255,255,.82);--bd:rgba(17,24,39,.12);--sheet:rgba(255,255,255,.98);--field:rgba(17,24,39,.05);--navbg:rgba(255,255,255,.82);--brandbg:rgba(255,255,255,.95);--glow:rgba(249,115,22,.28)}
+body{transition:background-color .3s,color .3s}
+html[data-theme=light] body{background:radial-gradient(900px 500px at 5% -10%,rgba(249,115,22,.16),transparent),radial-gradient(700px 500px at 100% 0,rgba(16,185,129,.12),transparent),var(--bg)}
+.nav{background:var(--navbg)}.sheet{background:var(--sheet)}input{background:var(--field)}.brand{background:var(--brandbg)}
+html[data-theme=light] .glass{box-shadow:0 6px 24px rgba(17,24,39,.08)}
+html[data-theme=light] .btn.ghost{color:var(--tx)}
+html[data-theme=light] .err,html[data-theme=light] .result.bad h2{color:#b91c1c}
+:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+.actions{display:flex;gap:8px;align-items:center}.icon-btn{padding:10px 13px;line-height:1;font-size:1.05rem}
+.hero{padding:30px 4px 10px}
+.hero h1{font-weight:800;letter-spacing:-.02em}
+.hero em{background:linear-gradient(90deg,#F97316,#fbbf24);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.pill{padding:6px 12px;border-radius:99px;font-size:.78rem;border:1px solid var(--bd);background:var(--gl);backdrop-filter:blur(8px)}
+.search{position:relative;margin-top:16px}
+.search input{margin:0;padding-left:44px;border-radius:14px}
+.search span{position:absolute;left:15px;top:50%;transform:translateY(-50%);opacity:.7}
+.empty{text-align:center;padding:40px 10px;color:var(--mu)}
+.card{box-shadow:0 8px 24px rgba(0,0,0,.16);animation:rise .5s backwards;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{box-shadow:0 14px 36px var(--glow);border-color:var(--or)}
+.card:nth-child(2){animation-delay:.06s}.card:nth-child(3){animation-delay:.12s}.card:nth-child(4){animation-delay:.18s}.card:nth-child(5){animation-delay:.24s}.card:nth-child(6){animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+.cover::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(255,255,255,.28),transparent 45%),repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 10px,transparent 10px 20px)}
+.tag{z-index:2}
+.emoji{position:relative;z-index:1;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));animation:float 3.5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px) rotate(-4deg)}}
+.btn:not(.ghost):not(.green){background:linear-gradient(135deg,#F97316,#ea580c);box-shadow:0 6px 18px rgba(249,115,22,.35)}
+.btn.green{background:linear-gradient(135deg,#10B981,#059669);box-shadow:0 6px 18px rgba(16,185,129,.3)}
+.btn:disabled{box-shadow:none}
+.sheet::before{content:"";display:block;width:42px;height:4px;border-radius:9px;background:var(--bd);margin:-8px auto 14px}
+@media(min-width:640px){.sheet::before{display:none}}
+.t-foot{border-top:2px dashed #d1d5db}
+#reader{border:2px solid var(--bd)}
+#reader:empty{min-height:150px;display:grid;place-items:center;border:2px dashed var(--bd)}
+#reader:empty::before{content:"📷 Scanner is off. Tap Start Scanner";color:var(--mu);font-size:.9rem}
+.result.ok{box-shadow:0 0 0 6px rgba(16,185,129,.15),0 0 40px rgba(16,185,129,.28)}
+.result.bad{box-shadow:0 0 0 6px rgba(239,68,68,.15),0 0 40px rgba(239,68,68,.28)}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:120}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
