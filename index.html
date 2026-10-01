@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<title>TicketiPass | Events, Tickets & Gate Verification</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="nav">
+  <div class="logo"><span class="mark">🎟</span><b>Ticketi<em>Pass</em></b></div>
+  <button id="staffBtn" class="btn ghost">🔐 Staff ONLY</button>
+</header>
+
+<main>
+  <section id="marketView">
+    <div class="hero">
+      <h1>Your night. Your match. <em>Your pass.</em></h1>
+      <p>Book in seconds. Get a secure,verified QR ticket on WhatsApp.</p>
+    </div>
+    <div id="filters" class="chips"></div>
+    <div id="events" class="grid"></div>
+  </section>
+
+  <section id="gateView" hidden>
+    <div class="gate-top">
+      <h2>🛂 Gate/Entrance Hub</h2>
+      <small id="staffName"></small>
+    </div>
+    <div id="stats" class="stats"></div>
+    <div class="panel glass">
+      <div id="reader"></div>
+      <div class="row"><button id="camBtn" class="btn">📷 Start Scanner</button></div>
+      <form id="manualForm" class="row">
+        <input id="manualId" placeholder="Ticket ID e.g. TP-1A2B3C4D5E" autocomplete="off" maxlength="40">
+        <button class="btn green">Verify</button>
+      </form>
+    </div>
+    <div id="result" class="result"></div>
+    <div class="panel glass">
+      <h3>Recent activity</h3>
+      <ul id="log"></ul>
+      <button id="resetBtn" class="btn ghost small">Reset demo data</button>
+    </div>
+  </section>
+</main>
+
+<div id="modal" class="modal" hidden><div id="sheet" class="sheet glass"></div></div>
+<div id="toast" class="toast"></div>
+
+<footer class="brand">
+  <b>Powered &amp; Engineered by TIBENDA ERICK</b>
+  <span>Digital Solutions &amp; Enterprise Automation</span>
+  <span>© 2026 NexUp Technologies. All Rights Reserved.</span>
+  <span class="ver">Verified Client Prototype • Authorized Demo</span>
+</footer>
+</body>
+</html>
